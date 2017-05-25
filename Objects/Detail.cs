@@ -6,9 +6,9 @@ namespace CDOrganizerProject.Objects
     private string _genre;
     private string _catalogIdentification;
     private string _condition;
-    private float _worth;
+    private decimal _worth;
 
-    public Detail (string label, string genre, string catalogIdentification, string condition, float worth)
+    public Detail (string label, string genre, string catalogIdentification, string condition, decimal worth)
     {
       _label = label;
       _genre = genre;
@@ -53,11 +53,11 @@ namespace CDOrganizerProject.Objects
       _condition = condition;
     }
 
-    public float GetWorth()
+    public decimal GetWorth()
     {
       return _worth;
     }
-    public void SetWorth(float worth)
+    public void SetWorth(decimal worth)
     {
       _worth = worth;
     }
