@@ -1,0 +1,18 @@
+@{
+  Layout="Shared/_Layout.cshtml";
+}
+
+<h2>@Model.GetTitle()</h2>
+<ul>
+  <li>Artist: @Model.GetArtist()</li>
+  <li>Label: @Model.GetDetailInfo().GetLabel()</li>
+  <li>Genre: @Model.GetDetailInfo().GetGenre()</li>
+  <li>Catalog ID: @Model.GetDetailInfo().GetCatalogIdentification()</li>
+  <li>Condition: @Model.GetDetailInfo().GetCondition()</li>
+  <li>Worth: @Model.GetDetailInfo().GetWorth()</li>
+
+</ul>
+<form action="/cds/@Model.GetId()" method="post">
+  <button type="submit">DELETE THIS CD</button>
+</form>
+<p><a href="/">Back to homepage.</a></p>

@@ -2,56 +2,18 @@
   Layout="Shared/_Layout.cshtml";
 }
 
-@* <ul>
-  @foreach(var item in @Model)
+@if ( Model.Count > 0 ) {
+  <h1>CD Collection</h1>
+  <ul>
+    @foreach(var item in Model)
     {
-      <li><a href = '/cds/@item.GetId()'><strong>@item.GetName()</strong>
-       <span style="color: @item.GetStatusColor();">@item.GetDeath()</span></a></li>
+      <li><a href="/cds/@item.GetId()">@item.GetArtist()</a></li>
     }
-</ul> *@
-<form action="/" method="post" class="form-horizontal">
-  <div class="form-group">
-    <label class="col-md-2" for="artist">Enter the Artist Name: </label>
-    <div class-"col-md-10">
-      <input id="artist" name="artist" type="text">
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="col-md-2" for="title">Enter the Title Name: </label>
-    <div class-"col-md-10">
-      <input id="title" name="title" type="text">
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="col-md-2" for="label">Enter the Label Name:</label>
-    <div class-"col-md-10">
-      <input id="label" name="label" type="text">
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="col-md-2" for="genre">Enter the Genre Here: </label>
-    <div class-"col-md-10">
-      <input id="genre" name="genre" type="text">
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="col-md-2" for="catalogId">Enter the Catalog Number Here: </label>
-    <div class-"col-md-10">
-      <input id="catalogId" name="catalogId" type="text">
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="col-md-2" for="condition">Enter the Condition Here: </label>
-    <div class-"col-md-10">
-      <input id="condition" name="condition" type="text">
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="col-md-2" for="worth">Enter the Value Here: </label>
-    <div class-"col-md-10">
-      <input id="worth" name="worth" type="number">
-    </div>
-  </div>
-
-  <button type="submit">Create</button>
+  </ul>
+} else {
+  <h2>Start your collection!</h2>
+}
+<p><a href="/cds/new">Add a CD listing.</a></p>
+<form action="/cds/cleared" method="post">
+  <button type="submit" name="button">Clear All CDs</button>
 </form>
