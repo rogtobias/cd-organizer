@@ -34,6 +34,7 @@ namespace CDOrganizerObject
         List<Cd> allCds = Cd.GetAll();
         return View["index.cshtml", allCds];
       };
+
   }
 }
 }

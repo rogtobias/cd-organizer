@@ -1,0 +1,43 @@
+@{
+  Layout="Shared/_Layout.cshtml";
+}
+
+<h2>Sorted List by Condition</h2>
+
+<ul>
+  @foreach(var item in @Model)
+    {
+      @if(@item.IsPoor())
+      {
+        <li><a href = "/cds/@item.GetId()">@item.GetTitle() Poor Condition</a></li>
+        <li>@item.GetArtist()</li>
+        <li>@item.GetLabel()</li>
+        <li>@item.GetCatalogIdentification()</li>
+        <li>@item.GetWorth()</li>
+      }
+      else if (@item.IsFair)
+      {
+        <li><a href = "/cds/@item.GetId()">@item.GetTitle() Fair Condition</a></li>
+        <li>@item.GetArtist()</li>
+        <li>@item.GetLabel()</li>
+        <li>@item.GetCatalogIdentification()</li>
+        <li>@item.GetWorth()</li>
+      }
+      else if (@item.IsGood)
+      {
+        <li><a href="/cds/@item.GetId()">@item.GetTitle() Good Condition</a></li>
+        <li>@item.GetArtist()</li>
+        <li>@item.GetLabel()</li>
+        <li>@item.GetCatalogIdentification()</li>
+        <li>@item.GetWorth()</li>
+      }
+      else if (@item.IsExcellent)
+      {
+        <li><a href="/cds/@item.GetId()">@item.GetTitle() Excellent Condition</a></li>
+        <li>@item.GetArtist()</li>
+        <li>@item.GetLabel()</li>
+        <li>@item.GetCatalogIdentification()</li>
+        <li>@item.GetWorth()</li>
+      }
+    }
+</ul>

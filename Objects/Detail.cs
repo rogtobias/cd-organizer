@@ -44,6 +44,15 @@ namespace CDOrganizerProject.Objects
       _catalogIdentification = catalogIdentification;
     }
 
+    public decimal GetWorth()
+    {
+      return _worth;
+    }
+    public void SetWorth(decimal worth)
+    {
+      _worth = worth;
+    }
+
     public string GetCondition()
     {
       return _condition;
@@ -53,13 +62,6 @@ namespace CDOrganizerProject.Objects
       _condition = condition;
     }
 
-    public decimal GetWorth()
-    {
-      return _worth;
-    }
-    public void SetWorth(decimal worth)
-    {
-      _worth = worth;
-    }
+    
   }
 }
